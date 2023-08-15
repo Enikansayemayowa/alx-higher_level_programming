@@ -9,10 +9,18 @@ if __name__ == "__main__":
 
     option = {"+": add, "-": sub, "*": mul, "/": div}
 
-    if sys.argv[2] not in list(option.keys()):
+    if sys.argv[2] not in option:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, option[sys.argv[2]](a, b)))
+    operator = sys.argv[2]
+    
+    if operator == "/":
+        if b == 0:
+            print("Error: Cannot divide by zero")
+            sys.exit(1)
+    
+    result = option[operator](a, b)
+    print("{} {} {} = {}".format(a, operator, b, result))
