@@ -4,7 +4,8 @@
 
 class Rectangle:
     """wertyuio """
-    pass
+    def __init__(self):
+        pass
 
 
 my_rectangle = Rectangle()
