@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """empty class triangle"""
+
+
 class Rectangle:
     """wertyuio """
     pass
