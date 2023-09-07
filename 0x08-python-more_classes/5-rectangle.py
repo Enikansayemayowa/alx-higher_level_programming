@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+"""Defines a Rectangle class."""
+
 
 class Rectangle:
+    """Defines a Rectangle class."""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
+        """declaring the getter for width"""
         return self.__width
 
     @width.setter
@@ -15,10 +19,12 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
 
     @property
     def height(self):
+        """declaring the getter for width"""
         return self.__height
 
     @height.setter
@@ -27,17 +33,21 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
 
     def area(self):
-        return self.__width * self.__height
+        """Return the area of the Rectangle."""
+        return (self.__width * self.__height)
 
     def perimeter(self):
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
+        """argument with hash characters"""
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_str = ""
@@ -45,5 +55,10 @@ class Rectangle:
             rectangle_str += "#" * self.__width + "\n"
         return rectangle_str.rstrip("\n")
 
+    def __repr__(self):
+        """ representation of the rectangle eval()"""
+        return f"Rectangle({self.__width}, {self.__height})"
+
     def __del__(self):
+        """Representation of delete"""
         print("Bye rectangle...")
