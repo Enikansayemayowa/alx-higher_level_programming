@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+"""Defines a Rectangle class."""
 class Rectangle:
+    """Represent a rectangle."""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """getter documentation for width"""
         return self.__width
 
     @width.setter
@@ -18,6 +21,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """getter documentation for height"""
         return self.__height
 
     @height.setter
