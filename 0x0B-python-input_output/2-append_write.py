@@ -3,9 +3,8 @@
 (UTF8) and returns the number of"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """ function that writes a string to a text file
     (UTF8) and returns the number of"""
-    with open(filename, "w", encoding="utf-8") as file:
+    with open(filename, "a", encoding="utf-8") as file:
         char_written = file.write(text)
-    return char_written
